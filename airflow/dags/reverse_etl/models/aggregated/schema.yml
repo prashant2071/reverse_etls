@@ -1,0 +1,8 @@
+version: 2
+sources:
+  - name: titanic_source
+    description: has data of passanger who travel on titanic ship
+    schema: public
+    tables:
+      - name: titanic
+        description: passanger data

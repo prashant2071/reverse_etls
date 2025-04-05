@@ -1,0 +1,10 @@
+services:
+  prashant-airflow:
+    image: newreverse:latest
+    environment:
+      - AIRFLOW_HOME=/usr/local/airflow
+    volumes:
+      - ./airflow:/usr/local/airflow
+    ports:
+      - "8080:8080"
+    command: airflow standalone

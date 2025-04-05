@@ -1,0 +1,21 @@
+[2025-04-05T17:46:55.660+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-05T17:46:55.721+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_and_store_data.fetching_and_modelling manual__2025-04-05T17:29:27.384414+00:00 [queued]>
+[2025-04-05T17:46:55.757+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_and_store_data.fetching_and_modelling manual__2025-04-05T17:29:27.384414+00:00 [queued]>
+[2025-04-05T17:46:55.758+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-04-05T17:46:55.849+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): fetching_and_modelling> on 2025-04-05 17:29:27.384414+00:00
+[2025-04-05T17:46:55.857+0000] {standard_task_runner.py:72} INFO - Started process 331 to run task
+[2025-04-05T17:46:55.862+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'fetch_and_store_data', 'fetching_and_modelling', 'manual__2025-04-05T17:29:27.384414+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/reverse_etl_dag.py', '--cfg-path', '/tmp/tmpqsc97tea']
+[2025-04-05T17:46:55.869+0000] {standard_task_runner.py:105} INFO - Job 15: Subtask fetching_and_modelling
+[2025-04-05T17:46:56.041+0000] {task_command.py:467} INFO - Running <TaskInstance: fetch_and_store_data.fetching_and_modelling manual__2025-04-05T17:29:27.384414+00:00 [running]> on host 20f80019eeb6
+[2025-04-05T17:46:56.312+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='fetch_and_store_data' AIRFLOW_CTX_TASK_ID='fetching_and_modelling' AIRFLOW_CTX_EXECUTION_DATE='2025-04-05T17:29:27.384414+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-05T17:29:27.384414+00:00'
+[2025-04-05T17:46:56.314+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-05T17:46:56.340+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2025-04-05T17:46:56.347+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', ' cd /usr/local/airflow/workfile && python datamodelling.py']
+[2025-04-05T17:46:56.362+0000] {subprocess.py:99} INFO - Output:
+[2025-04-05T17:47:06.254+0000] {subprocess.py:106} INFO - [2025-04-05T17:47:06.249+0000] {base.py:84} INFO - Retrieving connection 'postgres_default'
+[2025-04-05T17:53:50.993+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2025-04-05T17:53:51.080+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-04-05T17:53:51.081+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=fetch_and_store_data, task_id=fetching_and_modelling, run_id=manual__2025-04-05T17:29:27.384414+00:00, execution_date=20250405T172927, start_date=20250405T174655, end_date=20250405T175351
+[2025-04-05T17:53:51.212+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-05T17:53:51.283+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-05T17:53:51.304+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
