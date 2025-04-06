@@ -1,0 +1,34 @@
+[2025-04-06T02:55:37.736+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-06T02:55:37.785+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_and_store_data.trigger_dbt_run manual__2025-04-06T02:49:16.929856+00:00 [queued]>
+[2025-04-06T02:55:37.817+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_and_store_data.trigger_dbt_run manual__2025-04-06T02:49:16.929856+00:00 [queued]>
+[2025-04-06T02:55:37.818+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-04-06T02:55:37.890+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): trigger_dbt_run> on 2025-04-06 02:49:16.929856+00:00
+[2025-04-06T02:55:37.903+0000] {standard_task_runner.py:72} INFO - Started process 264 to run task
+[2025-04-06T02:55:37.911+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'fetch_and_store_data', 'trigger_dbt_run', 'manual__2025-04-06T02:49:16.929856+00:00', '--job-id', '84', '--raw', '--subdir', 'DAGS_FOLDER/reverse_etl_dag.py', '--cfg-path', '/tmp/tmp27tnb5zj']
+[2025-04-06T02:55:37.915+0000] {standard_task_runner.py:105} INFO - Job 84: Subtask trigger_dbt_run
+[2025-04-06T02:55:38.083+0000] {task_command.py:467} INFO - Running <TaskInstance: fetch_and_store_data.trigger_dbt_run manual__2025-04-06T02:49:16.929856+00:00 [running]> on host 830eaf47e7f8
+[2025-04-06T02:55:38.320+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='fetch_and_store_data' AIRFLOW_CTX_TASK_ID='trigger_dbt_run' AIRFLOW_CTX_EXECUTION_DATE='2025-04-06T02:49:16.929856+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-06T02:49:16.929856+00:00'
+[2025-04-06T02:55:38.322+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-06T02:55:38.347+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2025-04-06T02:55:38.349+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', ' cd /usr/local/airflow/dags/reverse_etl && dbt run']
+[2025-04-06T02:55:38.365+0000] {subprocess.py:99} INFO - Output:
+[2025-04-06T02:55:45.819+0000] {subprocess.py:106} INFO - [0m02:55:45  Running with dbt=1.9.4
+[2025-04-06T02:55:46.900+0000] {subprocess.py:106} INFO - [0m02:55:46  Registered adapter: postgres=1.9.0
+[2025-04-06T02:55:48.192+0000] {subprocess.py:106} INFO - [0m02:55:48  Found 1 model, 1 source, 434 macros
+[2025-04-06T02:55:48.200+0000] {subprocess.py:106} INFO - [0m02:55:48
+[2025-04-06T02:55:48.201+0000] {subprocess.py:106} INFO - [0m02:55:48  Concurrency: 2 threads (target='dev')
+[2025-04-06T02:55:48.203+0000] {subprocess.py:106} INFO - [0m02:55:48
+[2025-04-06T02:55:59.724+0000] {subprocess.py:106} INFO - [0m02:55:59  1 of 1 START sql table model aggregated.survival_rate .......................... [RUN]
+[2025-04-06T02:56:04.772+0000] {subprocess.py:106} INFO - [0m02:56:04  1 of 1 OK created sql table model aggregated.survival_rate ..................... [[32mSELECT 2[0m in 5.04s]
+[2025-04-06T02:56:08.192+0000] {subprocess.py:106} INFO - [0m02:56:08
+[2025-04-06T02:56:08.194+0000] {subprocess.py:106} INFO - [0m02:56:08  Finished running 1 table model in 0 hours 0 minutes and 19.99 seconds (19.99s).
+[2025-04-06T02:56:08.339+0000] {subprocess.py:106} INFO - [0m02:56:08
+[2025-04-06T02:56:08.341+0000] {subprocess.py:106} INFO - [0m02:56:08  [32mCompleted successfully[0m
+[2025-04-06T02:56:08.343+0000] {subprocess.py:106} INFO - [0m02:56:08
+[2025-04-06T02:56:08.345+0000] {subprocess.py:106} INFO - [0m02:56:08  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[2025-04-06T02:56:10.173+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2025-04-06T02:56:10.282+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-04-06T02:56:10.283+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=fetch_and_store_data, task_id=trigger_dbt_run, run_id=manual__2025-04-06T02:49:16.929856+00:00, execution_date=20250406T024916, start_date=20250406T025537, end_date=20250406T025610
+[2025-04-06T02:56:10.420+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-06T02:56:10.464+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-06T02:56:10.467+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

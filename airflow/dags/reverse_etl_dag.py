@@ -8,8 +8,8 @@ from datetime import datetime,timedelta
 
 def print_welcome():
     print('Welcome to Airflow!')
-CLIENT_ID = "13c4ddd8-83c3-457d-8a57-22e8f3a1d73a"
-CLIENT_SECRET = "JpYLjSu8ObVYhmZT9CCAl9zw2JJXjhtV"
+CLIENT_ID = "b50edd73-06e5-474c-9ef1-1173cfa2e1bc"
+CLIENT_SECRET = "X45PV2exLAFgftNTjtrcoPORjPKTsAY6"
 AIRBYTE_TRIGGER_URL = "https://api.airbyte.com/v1/jobs"
 # Airbyte Configuration
 AIRBYTE_CONNECTION_ID = "d22193d6-ce77-4ca2-b336-03826b5174c3"
@@ -58,7 +58,7 @@ def trigger_airbyte_sync(**context):
         job_id = response_json.get("jobId")
         context['ti'].xcom_push(key='job_id', value=job_id)
         print(f"Connection triggered successfully. Job ID: {job_id}")
-        time.sleep(15)
+        time.sleep(60)
         return job_id
     else:
         raise AirflowException(
